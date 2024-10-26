@@ -19,12 +19,13 @@ const Player = ({ players,handleChooseplayer}) => {
     
     const handleMarekasclick = () => {
         if (isSelected) {
-            // toast.success("Wow succesfully claimed");
-            alert("not available")
-        //   toast.warn("This player is already selected", {
-        //     position: "top-center",
-        //   });
-        } else {
+          
+           
+            alert("not available");
+            
+        //  
+        }
+         else {
           handleChooseplayer(biddingPrice, players); // Pass specific player here
           setSlected(true);
         }

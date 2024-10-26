@@ -6,6 +6,7 @@ const Singleplayer = ({ selectedPlayer,handledeletplayer }) => {
   const {playerId, name, image, role } = selectedPlayer;
   return (
     <div className="flex justify-between border-[1px] m-1 p-3 rounded-xl mx-auto w-full">
+    
       <div className="flex">
         <img className="h-16 w-16 m-5 rounded-full" src={image} alt="" />
 

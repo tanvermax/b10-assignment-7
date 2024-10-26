@@ -44,7 +44,7 @@ const handleChooseplayer = ( price, player ) => {
 
   // console.log("hello behn ki lore");
 
-  if (clicktoClaim > 0 && price <= clicktoClaim) {
+  if (clicktoClaim > 0 && price <= clicktoClaim ) {
 
     const updatedAmount = clicktoClaim - price;
     setClicktoclaim(updatedAmount);
@@ -55,15 +55,6 @@ const handleChooseplayer = ( price, player ) => {
   else {
     toast.error("you have insufficient funds, click the  claim free credit in top");
 
-    // alert("you have insufficient funds, click the  claim free credit in top")
-    // toast.error(
-    //   "you have insufficient funds, click the  claim free credit in top",
-    //   {
-    //     position: "top-center",
-    //   }
-    // );
-
-    // alert("you have bot suuffeciant mone click claim free credit");
   }
 };
 
@@ -143,7 +134,7 @@ const handledeletplayer =(playerId)=>{
 {/* main funtinal sesction */}
 
       {
-        showSelected ? (<Selectedplayer handledeletplayer={handledeletplayer} selectedPlayer={selectedPlayer} handleshowallPlayer={handleshowallPlayer} ></Selectedplayer>):( <Players players={players}  handleChooseplayer={handleChooseplayer}></Players>)
+        showSelected ? (<Selectedplayer handledeletplayer={handledeletplayer}  selectedPlayer={selectedPlayer} handleshowallPlayer={handleshowallPlayer} ></Selectedplayer>):( <Players players={players}  handleChooseplayer={handleChooseplayer}></Players>)
       }
      
      

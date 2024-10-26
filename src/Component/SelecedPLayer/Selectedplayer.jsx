@@ -3,9 +3,13 @@ import PropTypes from "prop-types";
 
 
 const Selectedplayer = ({handleshowallPlayer,selectedPlayer,handledeletplayer}) => {
+
+    const ready = selectedPlayer.length;
     return (
         <div className="text-left">
             <div className="py-4">
+                  <h1 className="text-3xl font-bold py-2">Selected player : 6/ {ready}</h1>
+
                 {
                     selectedPlayer.map( (selectedPlayer, idx)=> <Singleplayer handledeletplayer={handledeletplayer} key={idx} selectedPlayer={selectedPlayer} ></Singleplayer>)
                 }
@@ -19,9 +23,10 @@ const Selectedplayer = ({handleshowallPlayer,selectedPlayer,handledeletplayer}) 
 
 
 Selectedplayer.propTypes = {
-    selectedPlayer: PropTypes.object.isRequired,
-    handleshowallPlayer :PropTypes.func.isRequired,
-    handledeletplayer :PropTypes.func
+    selectedPlayer: PropTypes.array.isRequired,
+    handleshowallPlayer: PropTypes.func.isRequired,
+    handledeletplayer: PropTypes.func,
+    ready: PropTypes.number.isRequired
   };
   
 
