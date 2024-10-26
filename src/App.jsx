@@ -72,6 +72,13 @@ const handleshowallPlayer= ()=>{
 
 }
 
+const handledeletplayer =(playerId)=>{
+  console.log("accah this ace");
+  
+  const remaining = selectedPlayer.filter(selectedPlayer=>selectedPlayer.playerId !== playerId)
+  setSelectplayer(remaining);
+}
+
   return (
     <>
     <div className='mx-auto max-w-[1320px] py-5   '>
@@ -122,7 +129,7 @@ const handleshowallPlayer= ()=>{
 {/* main funtinal sesction */}
 
       {
-        showSelected ? (<Selectedplayer handleshowallPlayer={handleshowallPlayer} ></Selectedplayer>):( <Players players={players} handleChooseplayer={handleChooseplayer}></Players>)
+        showSelected ? (<Selectedplayer handledeletplayer={handledeletplayer} selectedPlayer={selectedPlayer} handleshowallPlayer={handleshowallPlayer} ></Selectedplayer>):( <Players players={players} handleChooseplayer={handleChooseplayer}></Players>)
       }
      
      
