@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Sora:wght@100..800&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.body{
+  font-family: "Sora", sans-serif;
+}
+.subbtn{
+  
+  background: linear-gradient(95deg, rgba(222,44,143,0.9861431870669746) 0%, rgba(224,161,161,1) 47%, rgba(207,118,42,1) 100%);
+  font-size: 20px;
+  font-weight: 600;
+  height: 56px;
+  width: 145px;
+  padding: 10px;
+  border-radius: 15px;
+  background-position: center;
+
+}
+.banner {
+  background-image: url('assets/bg-shadow.png');
+  background-color: black;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  height: 616px;
+}
+
+.footer-bg{
+  
+  background: linear-gradient(47deg, rgba(44,169,222,0.9861431870669746) 0%, rgba(255,255,255,1) 24%, rgba(255,255,255,1) 82%, rgba(224,149,24,1) 100%, rgba(255,255,255,1) 100%);
+  
+    border-radius: 15px;
+    padding: 50px;
+    background-color: aliceblue;
+  }
+
+  .lastftr{
+    background-color: #06091A;
+    
+  }
+
+  #extra{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  ul  li a{
+    color: #FFFFFF99;
+  }
+  nav h6{
+    color: white;
+  }
+  nav p{
+    color: #FFFFFF99;
+  }
+  
