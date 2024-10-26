@@ -28,6 +28,7 @@ Players.propTypes = {
     players: PropTypes.func.isRequired,
   handleShowSelected: PropTypes.func.isRequired,
   handleSelected: PropTypes.func,
+  handleChooseplayer: PropTypes.func,
 };
 
 export default Players;

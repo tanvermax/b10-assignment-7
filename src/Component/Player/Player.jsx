@@ -55,11 +55,14 @@ const Player = ({ players,handleChooseplayer }) => {
           <button className="btn" onClick={handleMarekasclick}>Choose Player</button>
         </div>
       </div>
+      <ToastContainer />
     </div>
+    
   );
 };
 
 Player.propTypes = {
+    handleChooseplayer: PropTypes.func.isRequired,
     players: PropTypes.shape({
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
