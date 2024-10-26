@@ -8,12 +8,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 
-const Player = ({ players,handleChooseplayer }) => {
+const Player = ({ players,handleChooseplayer}) => {
   const { name, image, country, role, battingType, bowlingType, biddingPrice } =
     players;
 
     const [isselected, setSlected] = useState(false);
 
+    
     const handleMarekasclick = () => {
         if (isselected) {
           toast.warn("This player is already selected", {
@@ -24,6 +25,9 @@ const Player = ({ players,handleChooseplayer }) => {
           setSlected(true);
         }
       };
+
+
+      
       
   return (
     <div className="mx-auto max-w-[1320px] my-5">

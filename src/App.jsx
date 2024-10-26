@@ -10,6 +10,7 @@ import './App.css'
 import Players from './Component/Players/Players'
 import Selectedplayer from "./Component/SelecedPLayer/Selectedplayer";
 
+
 function App() {
   const [players, setPlayer] = useState([]);
 
@@ -35,9 +36,15 @@ const [selectedPlayer, setSelectplayer] = useState([]);
 
 
 const handleChooseplayer = ( price, player ) => {
-  console.log(clicktoClaim);
+  if (selectedPlayer.length>= 6) {
+    toast.warn("Player limit reached. You cannot select more than 6 players.", {
+      position: "top-center",
+    });
+    return;
+  }
 
-  console.log("hello behn ki lore");
+
+  // console.log("hello behn ki lore");
 
   if (clicktoClaim > 0 && price <= clicktoClaim) {
 
@@ -46,7 +53,8 @@ const handleChooseplayer = ( price, player ) => {
 
     const newPlayer = [...selectedPlayer ,player]
     setSelectplayer(newPlayer);
-  } else {
+  } 
+  else {
     toast.error(
       "you have insufficient funds, click the  claim free credit in top",
       {
@@ -78,6 +86,25 @@ const handledeletplayer =(playerId)=>{
   const remaining = selectedPlayer.filter(selectedPlayer=>selectedPlayer.playerId !== playerId)
   setSelectplayer(remaining);
 }
+
+// const [isselected, setSlected] = useState(false);
+
+    
+// const newmarkedasread =()=>{
+//   if (player.length <6 ) {
+//     const handleMarekasclick = () => {
+//       if (isselected) {
+//         toast.warn("This player is already selected", {
+//           position: "top-center",
+//         });
+//       } else {
+//         handleChooseplayer(biddingPrice, players); // Pass specific player here
+//         setSlected(true);
+//       }
+//     };
+//   }
+  
+// }
 
   return (
     <>
