@@ -21,6 +21,7 @@ const Selectedplayer = ({handleshowallPlayer,selectedPlayer,handledeletplayer}) 
 Selectedplayer.propTypes = {
     selectedPlayer: PropTypes.object.isRequired,
     handleshowallPlayer :PropTypes.func.isRequired,
+    handledeletplayer :PropTypes.func
   };
   
 

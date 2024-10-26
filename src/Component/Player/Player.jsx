@@ -4,22 +4,26 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 import { faFlag } from "@fortawesome/free-solid-svg-icons";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import { useState } from "react";
 
 const Player = ({ players,handleChooseplayer}) => {
   const { name, image, country, role, battingType, bowlingType, biddingPrice } =
     players;
 
-    const [isselected, setSlected] = useState(false);
+
+    // const isSelected = selectedPlayers.some((selected) => selected.playerId === players.playerId);
+    const [isSelected, setSlected] = useState(false);
+    // const isSelected = selectedPlayers.some((selected) => selected.playerId === players.playerId);
 
     
     const handleMarekasclick = () => {
-        if (isselected) {
-          toast.warn("This player is already selected", {
-            position: "top-center",
-          });
+        if (isSelected) {
+            // toast.success("Wow succesfully claimed");
+            alert("not available")
+        //   toast.warn("This player is already selected", {
+        //     position: "top-center",
+        //   });
         } else {
           handleChooseplayer(biddingPrice, players); // Pass specific player here
           setSlected(true);
@@ -56,10 +60,10 @@ const Player = ({ players,handleChooseplayer}) => {
         </div>
         <div className="flex justify-between py-2 items-center">
           <p className="text-[18px ] font-semibold">price : $ {biddingPrice}</p>
-          <button className="btn" onClick={handleMarekasclick}>Choose Player</button>
+          <button className="btn" onClick={handleMarekasclick}>{isSelected ? "Player Chosen" : "Choose Player"}</button>
         </div>
       </div>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </div>
     
   );

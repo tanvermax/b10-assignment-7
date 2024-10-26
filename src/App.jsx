@@ -1,5 +1,5 @@
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from "react";
 import { useState } from "react";
 import profile from './../assets/logo.png'
@@ -22,12 +22,10 @@ function App() {
   const [clicktoClaim, setClicktoclaim] = useState(0);
 
 const handleClikedtoclaim=()=>{
-  toast.success(" Wow succesfully claimed", {
-    position: "top-center",
-  });
-
-  console.log("hi");
   
+  toast.success("Wow succesfully claimed");
+  
+
   let newmoney = clicktoClaim + 6000000;
     setClicktoclaim(newmoney);
 }
@@ -37,10 +35,10 @@ const [selectedPlayer, setSelectplayer] = useState([]);
 
 const handleChooseplayer = ( price, player ) => {
   if (selectedPlayer.length>= 6) {
-    toast.warn("Player limit reached. You cannot select more than 6 players.", {
-      position: "top-center",
-    });
+    toast.error("Player limit reached. You cannot select more than 6 players.");
+    
     return;
+  
   }
 
 
@@ -55,12 +53,15 @@ const handleChooseplayer = ( price, player ) => {
     setSelectplayer(newPlayer);
   } 
   else {
-    toast.error(
-      "you have insufficient funds, click the  claim free credit in top",
-      {
-        position: "top-center",
-      }
-    );
+    toast.error("you have insufficient funds, click the  claim free credit in top");
+
+    // alert("you have insufficient funds, click the  claim free credit in top")
+    // toast.error(
+    //   "you have insufficient funds, click the  claim free credit in top",
+    //   {
+    //     position: "top-center",
+    //   }
+    // );
 
     // alert("you have bot suuffeciant mone click claim free credit");
   }
@@ -81,33 +82,19 @@ const handleshowallPlayer= ()=>{
 }
 
 const handledeletplayer =(playerId)=>{
-  console.log("accah this ace");
+ 
   
   const remaining = selectedPlayer.filter(selectedPlayer=>selectedPlayer.playerId !== playerId)
   setSelectplayer(remaining);
 }
 
-// const [isselected, setSlected] = useState(false);
 
-    
-// const newmarkedasread =()=>{
-//   if (player.length <6 ) {
-//     const handleMarekasclick = () => {
-//       if (isselected) {
-//         toast.warn("This player is already selected", {
-//           position: "top-center",
-//         });
-//       } else {
-//         handleChooseplayer(biddingPrice, players); // Pass specific player here
-//         setSlected(true);
-//       }
-//     };
-//   }
-  
-// }
+
 
   return (
     <>
+    {/* <ToastContainer /> */}
+
     <div className='mx-auto max-w-[1320px] py-5   '>
       
       <div className='sticky top-0 w-full z-10  ' >
@@ -118,16 +105,16 @@ const handledeletplayer =(playerId)=>{
         <div className="">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a className='navicon'>Home</a>
+              <a className='font-bold text-base text-black'>Home</a>
             </li>
             <li>
-              <a className='navicon'>Fixture</a>
+              <a className='font-bold text-base text-black'>Fixture</a>
             </li>
             <li>
-              <a className='navicon'>Teams</a>
+              <a className='font-bold text-base text-black'>Teams</a>
             </li>
             <li>
-              <a className='navicon'>Schedules</a>
+              <a className='font-bold text-base text-black'>Schedules</a>
             </li>
            
           </ul>
@@ -137,7 +124,7 @@ const handledeletplayer =(playerId)=>{
       </div>
        {/* banner section */}
        <div className=''>
-         <div className="banner p-10 py-24 mx-auto max-w-[1320px]">
+         <div className="banner p-10 py-10 mx-auto max-w-[1320px]">
             <div>
             <img className=' mx-auto ' src={anner} alt="" />
             <h1 className='py-5 text-[#FFFFFF] text-[40px] font-bold '>Assemble Your Ultimate Dream 11 Cricket Team</h1>
@@ -156,14 +143,15 @@ const handledeletplayer =(playerId)=>{
 {/* main funtinal sesction */}
 
       {
-        showSelected ? (<Selectedplayer handledeletplayer={handledeletplayer} selectedPlayer={selectedPlayer} handleshowallPlayer={handleshowallPlayer} ></Selectedplayer>):( <Players players={players} handleChooseplayer={handleChooseplayer}></Players>)
+        showSelected ? (<Selectedplayer handledeletplayer={handledeletplayer} selectedPlayer={selectedPlayer} handleshowallPlayer={handleshowallPlayer} ></Selectedplayer>):( <Players players={players}  handleChooseplayer={handleChooseplayer}></Players>)
       }
      
      
     </div>
  {/* footer */}
  <div className="  ">
-      <div  className="mx-auto max-w-[1320px] footer-bg text-center relative top-32">
+     <div className="border-2 max-w-[1320px] mx-auto backdrop-blur top-32 p-5 rounded-xl relative bottom-10">
+     <div  className="mx-auto max-w-[1320px] footer-bg text-center ">
         <h2 className="py-1 text-4xl font-bold texy-[#131313]">
           Subscribe to our Newsletter
         </h2>
@@ -181,6 +169,7 @@ const handledeletplayer =(playerId)=>{
           <button className="subbtn">Subscribe</button>
         </div>
       </div>
+     </div>
       <div className="lastftr ">
         <img className="mx-auto pt-32" src={fotr} alt="" />
         <footer className="footer  text-base-content py-10  mx-auto max-w-[1320px]">
@@ -220,12 +209,9 @@ const handledeletplayer =(playerId)=>{
           </form>
         </footer>
       </div>
-      
+      <ToastContainer 
+      position="top-center"/>
     </div>
-    
-
-    <ToastContainer />
-    
     </>
   )
 }

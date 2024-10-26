@@ -16,7 +16,7 @@ const Players = ({players,handleChooseplayer}) => {
         </div>
         <div className="grid grid-cols-3 gap-4">
           {
-        players.map( players=> <Player key={players.playerId} players={players} handleChooseplayer={handleChooseplayer} ></Player>)
+        players.map( players=> <Player key={players.playerId}  players={players} handleChooseplayer={handleChooseplayer} ></Player>)
           }
         </div>
       </div>

@@ -35,11 +35,11 @@
 .footer-bg{
   
   background: linear-gradient(47deg, rgba(44,169,222,0.9861431870669746) 0%, rgba(255,255,255,1) 24%, rgba(255,255,255,1) 82%, rgba(224,149,24,1) 100%, rgba(255,255,255,1) 100%);
-  
     border-radius: 15px;
     padding: 50px;
     background-color: aliceblue;
   }
+
 
   .lastftr{
     background-color: #06091A;
