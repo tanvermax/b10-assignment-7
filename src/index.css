@@ -22,8 +22,8 @@
 
 }
 .banner {
-  background-image: url('assets/bg-shadow.png');
-  background-color: black;
+  background-image: url('./../assets/bg-shadow.png');
+  background-color: #06091A;
   height: 100vh;
   background-size: cover;
   background-position: center;
