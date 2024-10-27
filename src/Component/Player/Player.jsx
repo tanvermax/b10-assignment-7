@@ -13,23 +13,14 @@ const Player = ({ players,handleChooseplayer}) => {
 
 
     // const isSelected = selectedPlayers.some((selected) => selected.playerId === players.playerId);
-    const [isSelected, setSlected] = useState(false);
+    // const [isSelected, setSlected] = useState(false);
     // const isSelected = selectedPlayers.some((selected) => selected.playerId === players.playerId);
 
     
-    const handleMarekasclick = () => {
-        if (isSelected) {
+  // Pass specific player here
           
-           
-            alert("not available");
-            
-        //  
-        }
-         else {
-          handleChooseplayer(biddingPrice, players); // Pass specific player here
-          setSlected(true);
-        }
-      };
+      
+  
 
 
       
@@ -61,7 +52,7 @@ const Player = ({ players,handleChooseplayer}) => {
         </div>
         <div className="flex justify-between py-2 items-center">
           <p className="text-[18px ] font-semibold">price : $ {biddingPrice}</p>
-          <button className="btn" onClick={handleMarekasclick}>{isSelected ? "Player Chosen" : "Choose Player"}</button>
+          <button className="btn" onClick={()=>handleChooseplayer(biddingPrice, players)}>Choose Player</button>
         </div>
       </div>
       {/* <ToastContainer /> */}
